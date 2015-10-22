@@ -1,0 +1,159 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="/index/home">LIKE DDALGi</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Other Product</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Purchase</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Order Sheet -->
+    <div class="box" id="buy">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <hr>
+            <h3 class="intro-text text-center">Buy
+                <strong>DDALGi Chunk</strong>
+            </h3>
+            <hr>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-xs-12" align="center">
+            <h3>선택하신 상품의 <span>주문<span>이 완료되었습니다.</h3>
+            <h4>입금하실 계좌는 <span>땡땡땡</span>입니다.</h4>
+            <div class="space"></div>
+
+            <table class="ci" width="80%">
+                <tr>
+                    <td class="left">주문번호</td>
+                    <td class="right"><%= @confirm.buy_date %></td>
+                </tr>
+                <tr>
+                    <td class="left">주문자ID</td>
+                    <td class="right"><%= @confirm.buy_id %></td>
+                </tr>
+                <tr>
+                    <td class="left">배송지</td>
+                    <td class="right"><%= @confirm.address %> <%= @confirm.detail_address %></td>
+                </tr>
+                <tr>
+                    <td class="left">주문자</td>
+                    <td class="right"><%= @confirm.name %></td>
+                </tr>
+                <tr>
+                    <td class="left">주문상품</td>
+                    <td class="right"><%= @confirm.menu_index %>   /   <%= @confirm.menu_volume %>개</td>
+                </tr>
+            </table>
+
+            <div class="space">
+
+            </div>
+
+            <table width="80%">
+                <tr>
+                    <td class="up">주문금액</td>
+                    <td class="up">배송비</td>
+                    <td class="up">할인금액</td>
+                    <td class="up">총결제금액</td>
+                </tr>
+                <tr>
+                    <td class="down"><%=@confirm.menu_total%><span class="won">원</span></td>
+                    <td class="down">0<span class="won">원</span></td>
+                    <td class="down">0<span class="won">원</span></td>
+                    <td class="down">0<span class="won">원</span></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+<!-- /Order Sheet -->
+
+</div>
+
+
+
+<!-- Page CSS -->
+<style>
+body{
+    background: url('../img/strawberry/likeddalgi.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.box {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.8);
+}
+{
+    .box:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+td {
+    padding: 15px;
+    text-align: left;
+}
+table {
+    border-top: 3px solid;
+    border-bottom: 2px solid;
+}
+.left {
+    background: rgba(247,247,247,0.6);
+    border-right: 1px solid;
+}
+.right{
+    padding-left: 45px;
+}
+.space{
+    padding: 15px;
+}
+.up {
+    background: rgba(247,247,247,0.6);
+    border-bottom: 1px solid;
+    font-size: 15px;
+}
+.down {
+    margin-top: 10px;
+    border-bottom: 10px;
+    font-size: 15px;
+}
+.won {
+    font-size: 1em;
+}
+</style>
