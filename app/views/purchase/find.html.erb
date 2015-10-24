@@ -1,0 +1,26 @@
+<p><span class="buy_id"><%= @find_data.buy_id %></span></p>
+<p><span class="address"><%= @find_data.address %></span> / <span class="detail_address"><%= @find_data.detail_address %></span></p>
+<p><span class="name"><%= @find_data.name %></span></p>
+<button id="give_value" type="button" class="btn btn-info">확인</button>
+<button id="close_window" type="button" class="btn btn-warning">취소</button>
+
+
+<script>
+
+$(function(){
+	$('#give_value').click(function(){
+		var buy_id = $('.buy_id').text();
+		var address = $('.address').text();
+		var detail_address = $('.detail_address').text();
+		var name = $('.name').text();
+		opener.setChildValue(buy_id, address, detail_address, name);
+		window.close();
+	});
+})
+$(function(){
+	$('#close_window').click(function(){
+		window.close();
+	});
+})
+
+</script>

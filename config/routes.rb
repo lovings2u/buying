@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'purchase/strawberry'
   post 'purchase/strawberry'
-  get 'purchase/confirm'
   post 'purchase/confirm'
   get 'purchase/complete'
   post 'purchase/complete'
@@ -12,6 +11,10 @@ Rails.application.routes.draw do
   post 'purchase/searching'
   get 'index/home'
   post 'index/home'
+  get 'purchase/fail'
+  post 'purchase/fail'
+  get 'purchase/search'
+  post 'purchase/find'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

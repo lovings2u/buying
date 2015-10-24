@@ -1,0 +1,30 @@
+<div calss="popup" >
+	<div class="top"><img width="18px" src="http://d30y9cdsu7xlg0.cloudfront.net/png/18649-200.png" />기존 주문 검색</div>
+	<hr align="left">
+	<div class="body">
+		<form action="/purchase/find" method="POST">
+			<div class="input-group">
+				<input type="text" name="cell_phone" class="form-control" size="10">
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-warning">검색하기</button>
+				</span>
+		</form>
+	</div>
+</div>
+
+<style>
+
+.top {
+	height: 30px;
+	width: 100%;
+	font-size: 15px;
+	vertical-align: middle;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+div > img {
+	margin-right: 10px;
+}
+
+</style>

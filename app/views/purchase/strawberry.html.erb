@@ -108,7 +108,7 @@
         </div>
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6 col-xs-12 form_input" align="center">
-             <form action="/purchase/confirm" method="POST" name="order">
+             <form action="/purchase/confirm" method="POST">
                 <p>핸드폰번호
                 <div class="input-group">
                     <input type="text" name="cell_phone" class="cell_phone form-control">
@@ -200,44 +200,30 @@
     });
 <!-- /Auto Calculate -->
 
-<!-- Search Info -->
+<!-- Search Popup -->
     $(function(){
-        $('.searching').on('click',function(e){
-        e.preventDefault();
-        var param = $('.cell_phone').val();
-        console.log(param);
-        if(param == '' || param == null)
-        {
-            alert("핸드폰 번호를 입력하세요!");
-            return;
-        }
-
-        $.ajax({
-            url: 'searching',
-            type: 'POST',
-            data: param,
-            cache: false,
-            async: false,
-            datatype: 'text',
-            success: function(response){
-                if(response==0){
-                    alert("기존 주문내역이 없습니다. \n 새로 입력하세요.");
-                }
-                else{
-                    $('.address').val(response.address);
-                    $('.detail.address').val(response.detail_address);
-                    $('.buyer_name').val(response.name);
-                }
-            },
-            error: function(){
-                alert("에러발생.");
-            }
+        $('.searching').click(function(){
+        var popUrl = "/purchase/search";   //팝업창에 출력될 페이지 URL
+        var popOption = "width=400, height=200, menuvar=no, resizable=no, scrollbars=no, status=no, toolbar=no, location=no;" ;    
+        //팝업창 옵션(optoin)
+            window.open(popUrl,"",popOption);
         });
-        console.log(response);
-    });
-   })
+    })
+<!--/Search Popup -->
 
-<!--/Search Info -->
+<!--Get Data from Popup -->
+    function setChildValue(buy_id, address, detail_address, name){
+        console.log(buy_id);
+        console.log(address);
+        console.log(detail_address);
+        console.log(name);
+        $('.cell_phone').val(buy_id);
+        $('.address').val(address);
+        $('.detail_address').val(detail_address);
+        $('.buyer_name').val(name);
+    };
+
+<!--/Get Data from Popup -->
 
 <!-- Popup Script -->
     function layer_open(el){
